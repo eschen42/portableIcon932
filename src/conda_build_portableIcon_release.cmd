@@ -388,6 +388,15 @@ cd recipe
 conda-build . || (
   echo.conda-build failed. If this is surprising, be sure that you have
   echo.  activated a conda enviroment and installed conda-bin.
+  echo.
+  echo.Your environment must include at least the following packages:
+  echo.    - conda-build
+  echo.    - conda-verify
+  echo.    - anaconda-client
+  echo.
+  echo.For example:
+  echo.  conda create -n build conda-build conda-verify anaconda-client
+  echo.
   popd
   exit /b 1
 )

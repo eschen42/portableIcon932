@@ -13,14 +13,14 @@ Use file in this directory as described below to build:
 - `nticont.exe` and `nticonx.exe` are not compatible with files on Google Drive.
 - The convenience scripts do not take into account the fact that the spaces in `My drive` and `Shared drives` are preserved even when batch files call for spaceless names.
 
-## About the `icon=9.5.2` package in the `eschen42` conda channel
+## How to build the `icon=9.5.2` package in the `eschen42` conda channel
 
-The `icon-9.5.2` package in the `eschen42` conda channel was built from
+[The `icon-9.5.2` package in the `eschen42` conda channel](https://anaconda.org/eschen42/icon) is built from
 the `master` branch on GitHub by running:
 ```
 conda_build_portableIcon_master.cmd
 ```
-which downloads the zip of the HEAD and invokes `conda-build`.
+which extracts the conda recipe, downloads the zip of the HEAD and invokes `conda-build`.
 
 ## About `..\bin` and `.\icon\config\cygwin_portable`
 
@@ -36,6 +36,8 @@ Cygnal is Kaz Kylheku's "Cygwin Native Application Layer" that
 For information regarding the "Cygwin Native Application Library", see the Cygnal project homepage [http://www.kylheku.com/cygnal/](https://web.archive.org/web/20210811182329im_/http://www.kylheku.com/cygnal/).
 
 The `..\bin\cygwin1.dll` is a renamed copy of the Cygnal DLL ([http://www.kylheku.com/cygnal/cygwin1-3-1-98-64bit.dll](https://web.archive.org/web/20210817124227im_/http://www.kylheku.com/cygnal/cygwin1-3-1-98-64bit.dll), having SHA256 checksum 6929bf6781c322597584dcb71fbe36f836017a4704bcaad2ca5959b4aa390d30) provided for running these executables outside the context of Cygwin.  This version corresponds only to the `cygwin1.dll` from Cygwin 3.2.0, which is to say that it only works with executables linked against the Cygwin 3.2.0 `cygwin1.dll`.  Because this DLL is derived from the Cygwin DLL, it is licensed under [LGPLv3](https://www.gnu.org/licenses/lgpl-3.0-standalone.html), making it freely distributable with the license notice; see [https://cygwin.com/licensing.html](https://cygwin.com/licensing.html).
+
+To build Icon extensions, you will need to use the Cygwin 3.2.0 environment.
 
 ## About `.\callcmd.c`
 
